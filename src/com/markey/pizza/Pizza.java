@@ -3,6 +3,7 @@ package com.markey.pizza;
 import com.markey.ingredient.Cheese;
 import com.markey.ingredient.Clams;
 import com.markey.ingredient.Dough;
+import com.markey.ingredient.Ingredient;
 import com.markey.ingredient.Pepperoni;
 import com.markey.ingredient.Sauce;
 import com.markey.ingredient.Veggies;
@@ -15,6 +16,8 @@ public abstract class Pizza {
 	Cheese cheese;
 	Pepperoni pepperoni;
 	Clams clam;
+	Double price;
+	Ingredient ingredient;
 	//准备，收集原材料
 	public abstract void prepare();
 	//烘烤
@@ -28,6 +31,15 @@ public abstract class Pizza {
 	//打包披萨
 	public void box(){
 		System.out.println("将pizza打包进pizza盒子");
+	}
+	//标价
+	public void cost(){
+		price = ingredient.cost();
+		System.out.println("pizza价格：$" + price);
+	}
+	//附上配料表
+	public void descript(){
+		System.out.println("pizza配料：" + ingredient.getDescription());
 	}
 	String getName() {
 		return name;

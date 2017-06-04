@@ -1,8 +1,11 @@
 package com.markey.IngredientFactory;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 import com.markey.ingredient.Cheese;
 import com.markey.ingredient.Clams;
 import com.markey.ingredient.Dough;
+import com.markey.ingredient.Ingredient;
 import com.markey.ingredient.Pepperoni;
 import com.markey.ingredient.Sauce;
 import com.markey.ingredient.Veggies;
@@ -29,39 +32,42 @@ public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
 	}
 
 	@Override
-	public Sauce createSauce() {
+	public Sauce createSauce(Ingredient ingredient) {
 		// TODO Auto-generated method stub
 		System.out.println("拿点从NewYork的pizza原料工厂买来的海鲜酱");
-		return new MarinaraSauce();
+		return new MarinaraSauce(ingredient);
 	}
 
 	@Override
-	public Cheese createCheese() {
+	public Cheese createCheese(Ingredient ingredient) {
 		// TODO Auto-generated method stub
 		System.out.println("拿点从NewYork的pizza原料工厂买来的巴马干酪");
-		return new ReggianoCheese();
+		return new ReggianoCheese(ingredient);
 	}
 
 	@Override
-	public Veggies[] createVeggies() {
+	public Veggies createVeggies(Ingredient ingredient) {
 		// TODO Auto-generated method stub
-		Veggies veggies[] = {new Garlic(), new Onion(), new Mushroom(), new RedPepper()};
 		System.out.println("来点蔬菜，蒜头，洋葱，蘑菇，红辣椒");
+		Veggies veggies = new Garlic(ingredient);
+		veggies = new Onion(veggies);
+		veggies = new Mushroom(veggies);
+		veggies = new RedPepper(veggies);
 		return veggies;
 	}
 
 	@Override
-	public Pepperoni createPepperoni() {
+	public Pepperoni createPepperoni(Ingredient ingredient) {
 		// TODO Auto-generated method stub
 		System.out.println("加点意大利香肠片");
-		return new SlicedPepperoni();
+		return new SlicedPepperoni(ingredient);
 	}
 
 	@Override
-	public Clams createClam() {
+	public Clams createClam(Ingredient ingredient) {
 		// TODO Auto-generated method stub
 		System.out.println("加点新鲜蛤蚌");
-		return new FreshClams();
+		return new FreshClams(ingredient);
 	}
 
 }

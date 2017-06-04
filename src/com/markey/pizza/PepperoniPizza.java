@@ -1,6 +1,7 @@
 package com.markey.pizza;
 
 import com.markey.IngredientFactory.PizzaIngredientFactory;
+import com.markey.ingredient.Ingredient;
 
 public class PepperoniPizza extends Pizza {
 
@@ -15,10 +16,11 @@ public class PepperoniPizza extends Pizza {
 	public void prepare() {
 		// TODO Auto-generated method stub
 		System.out.println("准备"+name+"所需原材料 ");
-		dough = ingredientFactory.createDough();
-		veggies = ingredientFactory.createVeggies();
-		cheese = ingredientFactory.createCheese();
-		pepperoni = ingredientFactory.createPepperoni();
+		Ingredient ingredient = ingredientFactory.createDough();
+		ingredient = ingredientFactory.createVeggies(ingredient);
+		ingredient = ingredientFactory.createCheese(ingredient);
+		ingredient = ingredientFactory.createPepperoni(ingredient);
+		this.ingredient = ingredient;
 	}
 
 }

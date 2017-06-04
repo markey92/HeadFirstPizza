@@ -2,20 +2,12 @@ package com.markey.ingredient;
 /*
  * 酱料
  */
-public abstract class Sauce {
-	String name;
+public abstract class Sauce extends Jardiniere {
 
-	public Sauce(String name) {
-		super();
+	public Sauce(String name, Ingredient ingredient) {
+		super(name, ingredient);
 		this.name = name;
 	}
 
-	String getName() {
-		return name;
-	}
-
-	void setName(String name) {
-		this.name = name;
-	}
 	
 }

@@ -1,22 +1,15 @@
 package com.markey.ingredient;
 /*
- * 面团
+ * 面团的超类
  */
-public abstract class Dough {
-
-	String name;
-
-	public Dough(String name) {
-		super();
-		this.name = name;
-	}
-
-	String getName() {
-		return name;
-	}
-
-	void setName(String name) {
-		this.name = name;
-	}
+public abstract class Dough extends Ingredient{
 	
+	public Dough(String name) {
+		this.name = name;
+		this.description = "SimpleDough";
+	}
+	public String getDescription() {
+		return description;
+	}
+	abstract public double cost();
 }

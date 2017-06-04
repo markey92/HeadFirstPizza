@@ -2,21 +2,12 @@ package com.markey.ingredient;
 /*
  * 蔬菜
  */
-public abstract class Veggies {
+public abstract class Veggies extends Jardiniere{
 
-	String name;
 
-	public Veggies(String name) {
-		super();
+	public Veggies(String name, Ingredient ingredient) {
+		super(name, ingredient);
 		this.name = name;
 	}
 
-	String getName() {
-		return name;
-	}
-
-	void setName(String name) {
-		this.name = name;
-	}
-	
 }

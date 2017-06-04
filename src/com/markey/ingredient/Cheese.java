@@ -2,21 +2,9 @@ package com.markey.ingredient;
 /*
  * 奶酪
  */
-public abstract class Cheese {
+public abstract class Cheese extends Jardiniere{
 
-	String name;
-
-	public Cheese(String name) {
-		super();
-		this.name = name;
+	public Cheese(String name, Ingredient ingredient) {
+		super(name, ingredient);
 	}
-
-	String getName() {
-		return name;
-	}
-
-	void setName(String name) {
-		this.name = name;
-	}
-	
 }

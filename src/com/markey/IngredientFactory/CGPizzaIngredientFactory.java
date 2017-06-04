@@ -3,6 +3,7 @@ package com.markey.IngredientFactory;
 import com.markey.ingredient.Cheese;
 import com.markey.ingredient.Clams;
 import com.markey.ingredient.Dough;
+import com.markey.ingredient.Ingredient;
 import com.markey.ingredient.Pepperoni;
 import com.markey.ingredient.Sauce;
 import com.markey.ingredient.Veggies;
@@ -28,38 +29,40 @@ public class CGPizzaIngredientFactory implements PizzaIngredientFactory {
 	}
 
 	@Override
-	public Sauce createSauce() {
+	public Sauce createSauce(Ingredient ingredient) {
 		// TODO Auto-generated method stub
 		System.out.println("拿点从Chicago的pizza原料工厂买来的海鲜酱");
-		return new MarinaraSauce();
+		return new MarinaraSauce(ingredient);
 	}
 
 	@Override
-	public Cheese createCheese() {
+	public Cheese createCheese(Ingredient ingredient) {
 		// TODO Auto-generated method stub
 		System.out.println("拿点从Chicago的pizza原料工厂买来的巴马干酪");
-		return new ReggianoCheese();
+		return new ReggianoCheese(ingredient);
 	}
 
 	@Override
-	public Veggies[] createVeggies() {
+	public Veggies createVeggies(Ingredient ingredient) {
 		// TODO Auto-generated method stub
-		Veggies veggies[] = {new Tomato(), new Potato(), new Mushroom()};
 		System.out.println("Chicago人喜欢吃西红柿、土豆、洋葱和蘑菇");
+		Veggies veggies = new Tomato(ingredient);
+		veggies = new Potato(veggies);
+		veggies = new Mushroom(veggies);
 		return veggies;
 	}
 
 	@Override
-	public Pepperoni createPepperoni() {
+	public Pepperoni createPepperoni(Ingredient ingredient) {
 		// TODO Auto-generated method stub
 		System.out.println("加点Chicago的意大利香肠片");
-		return new SlicedPepperoni();
+		return new SlicedPepperoni(ingredient);
 	}
 
 	@Override
-	public Clams createClam() {
+	public Clams createClam(Ingredient ingredient) {
 		// TODO Auto-generated method stub
 		System.out.println("Chicago在内陆，只能加点冰冻蛤蚌啦");
-		return new FreshClams();
+		return new FreshClams(ingredient);
 	}
 }
