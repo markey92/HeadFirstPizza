@@ -8,8 +8,4 @@ public abstract class Dough extends Ingredient{
 		this.name = name;
 		this.description = "SimpleDough";
 	}
-	public String getDescription() {
-		return description;
-	}
-	abstract public double cost();
 }

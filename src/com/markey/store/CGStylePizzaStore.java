@@ -14,6 +14,8 @@ public class CGStylePizzaStore extends PizzaStore{
 	public CGStylePizzaStore(Enterprise enterprise, String location, String name) {
 		super(enterprise, location, name);
 		// TODO Auto-generated constructor stub
+		System.out.println(enterprise.getName()+"发现"+location+"这个地方有商机");
+		System.out.println("于是在"+location+"迅速占领市场，成立了一家pizza店："+name);
 	}
 
 	@Override

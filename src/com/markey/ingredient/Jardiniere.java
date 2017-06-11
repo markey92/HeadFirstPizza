@@ -1,5 +1,7 @@
 package com.markey.ingredient;
-
+/*
+ * 修饰者 佐料
+ */
 public abstract class Jardiniere extends Ingredient {
 
 	Ingredient ingredient;

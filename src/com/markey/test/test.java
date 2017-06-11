@@ -12,7 +12,7 @@ public class test {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//成立HeadFirstPizza全球有限公司
-		Enterprise headFirstPizzaEnterprise = new HeadFirstPizzaEnterprise();
+		Enterprise headFirstPizzaEnterprise = HeadFirstPizzaEnterprise.getInstance();
 		//迅速开了一下NewYork分店-》使用观察者模式，会注册到HeadFirstPizza全球有限公司旗下
 		NYStylePizzaStore nyPizzaStore = new NYStylePizzaStore(headFirstPizzaEnterprise, "NewYork", "NewYorkHFpizza");
 		//这时候来了一个NewYork顾客jack
@@ -24,6 +24,7 @@ public class test {
 		//在Chicago有一位marlin同志
 		ChicagoCustomer marlin = new ChicagoCustomer("marlin", "Chicago", headFirstPizzaEnterprise);
 		marlin.bookPizza("pepperoni");
+		marlin.bookPizza("Clam");
 	}
 
 }

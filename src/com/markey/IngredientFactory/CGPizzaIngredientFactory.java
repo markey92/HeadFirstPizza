@@ -8,6 +8,7 @@ import com.markey.ingredient.Pepperoni;
 import com.markey.ingredient.Sauce;
 import com.markey.ingredient.Veggies;
 import com.markey.ingredient.impl.FreshClams;
+import com.markey.ingredient.impl.FrozenClams;
 import com.markey.ingredient.impl.Garlic;
 import com.markey.ingredient.impl.MarinaraSauce;
 import com.markey.ingredient.impl.Mushroom;
@@ -63,6 +64,6 @@ public class CGPizzaIngredientFactory implements PizzaIngredientFactory {
 	public Clams createClam(Ingredient ingredient) {
 		// TODO Auto-generated method stub
 		System.out.println("Chicago在内陆，只能加点冰冻蛤蚌啦");
-		return new FreshClams(ingredient);
+		return new FrozenClams(ingredient);
 	}
 }

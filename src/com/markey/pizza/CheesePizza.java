@@ -2,7 +2,9 @@ package com.markey.pizza;
 
 import com.markey.IngredientFactory.PizzaIngredientFactory;
 import com.markey.ingredient.Ingredient;
-
+/*
+ * 芝士pizza
+ */
 public class CheesePizza extends Pizza {
 
 	PizzaIngredientFactory ingredientFactory;

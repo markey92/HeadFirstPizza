@@ -10,12 +10,6 @@ import com.markey.ingredient.Veggies;
 
 public abstract class Pizza {
 	String name;
-	Dough dough;
-	Sauce sauce;
-	Veggies veggies[];
-	Cheese cheese;
-	Pepperoni pepperoni;
-	Clams clam;
 	Double price;
 	Ingredient ingredient;
 	//准备，收集原材料
